@@ -4,7 +4,7 @@
   <li>Linguagem: C# - .NET 8</li>
   <li>Blazor - SPA</li>
   <li>SGBD: SQLite</li>
-
+<br>
   O intuito desse sistema foi colocar em prática programação orientada a objetos em C#, <br>
   utilizar persitência de dados em um CRUD com as operações de criar, ler, atualizar e deletar alunos cadastrados. <br>
   Para isso utilizei o Blazor para a criação do projeto.
