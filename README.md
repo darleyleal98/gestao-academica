@@ -11,4 +11,7 @@
   
 </p>
 <img src="https://github.com/darleyleal98/gestao-academica/assets/132721098/a45120df-4211-4fe7-ba36-245396d9492f">
-<img src="https://github.com/darleyleal98/gestao-academica/assets/132721098/875846a8-6b84-4400-bfc0-955c084a63b5">
+<img src="![image](https://github.com/darleyleal98/gestao-academica/assets/132721098/cace6962-4f38-4305-9ece-67c638ef66b2)">
+<img src="![image](https://github.com/darleyleal98/gestao-academica/assets/132721098/265bbf8a-2d71-4932-9d35-b22703e8bcfe)">
+<img src="![image](https://github.com/darleyleal98/gestao-academica/assets/132721098/9cdd88c0-69b8-47e0-bd7b-9590db54948e)">
+<img src="![image](https://github.com/darleyleal98/gestao-academica/assets/132721098/dad61673-1042-4443-b646-6f8e24a60519)">
