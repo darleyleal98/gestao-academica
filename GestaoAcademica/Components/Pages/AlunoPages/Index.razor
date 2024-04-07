@@ -1,0 +1,28 @@
+﻿@page "/alunos"
+@using Microsoft.AspNetCore.Components.QuickGrid
+@inject GestaoAcademica.Data.DatabaseContext DB
+@using StudentGuide.Models
+
+<PageTitle>Index</PageTitle>
+
+<h1>Alunos</h1>
+
+<p>
+    <a href="alunos/create">Adicionar</a>
+</p>
+
+<QuickGrid Class="table" Items="DB.Alunos">
+    <PropertyColumn Property="aluno => aluno.RU" />
+    <PropertyColumn Property="aluno => aluno.Nome" />
+    <PropertyColumn Property="aluno => aluno.Idade" />
+    <PropertyColumn Property="aluno => aluno.Endereco" />
+    <PropertyColumn Property="aluno => aluno.Email" />
+    <PropertyColumn Property="aluno => aluno.Curso" />
+    <PropertyColumn Property="aluno => aluno.Telefone" />
+
+    <TemplateColumn Context="aluno">
+        <a href="@($"alunos/edit?id={aluno.Id}")">Editar</a> |
+        <a href="@($"alunos/details?id={aluno.Id}")">Detalhes</a> |
+        <a href="@($"alunos/delete?id={aluno.Id}")">Remover</a>
+    </TemplateColumn>
+</QuickGrid>

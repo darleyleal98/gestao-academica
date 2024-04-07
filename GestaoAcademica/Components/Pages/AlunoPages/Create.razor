@@ -1,0 +1,73 @@
+﻿@page "/alunos/create"
+@inject GestaoAcademica.Data.DatabaseContext DB
+@using StudentGuide.Models
+@inject NavigationManager NavigationManager
+
+<PageTitle>Create</PageTitle>
+
+<h1>Criar</h1>
+
+<h4>Aluno</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <EditForm method="post" Model="Aluno" OnValidSubmit="AddAluno" FormName="create" Enhance>
+            <DataAnnotationsValidator />
+            <ValidationSummary class="text-danger" />
+            <div class="mb-3">
+                <label for="ru" class="form-label">RU:</label>
+                <InputNumber id="ru" @bind-Value="Aluno.RU" class="form-control" />
+                <ValidationMessage For="() => Aluno.RU" class="text-danger" />
+            </div>
+            <div class="mb-3">
+                <label for="nome" class="form-label">Nome:</label>
+                <InputText id="nome" @bind-Value="Aluno.Nome" class="form-control" />
+                <ValidationMessage For="() => Aluno.Nome" class="text-danger" />
+            </div>
+            <div class="mb-3">
+                <label for="idade" class="form-label">Idade:</label>
+                <InputNumber id="idade" @bind-Value="Aluno.Idade" class="form-control" />
+                <ValidationMessage For="() => Aluno.Idade" class="text-danger" />
+            </div>
+            <div class="mb-3">
+                <label for="endereco" class="form-label">Endereco:</label>
+                <InputText id="endereco" @bind-Value="Aluno.Endereco" class="form-control" />
+                <ValidationMessage For="() => Aluno.Endereco" class="text-danger" />
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email:</label>
+                <InputText id="email" @bind-Value="Aluno.Email" class="form-control" />
+                <ValidationMessage For="() => Aluno.Email" class="text-danger" />
+            </div>
+            <div class="mb-3">
+                <label for="curso" class="form-label">Curso:</label>
+                <InputText id="curso" @bind-Value="Aluno.Curso" class="form-control" />
+                <ValidationMessage For="() => Aluno.Curso" class="text-danger" />
+            </div>
+            <div class="mb-3">
+                <label for="telefone" class="form-label">Telefone:</label>
+                <InputText id="telefone" @bind-Value="Aluno.Telefone" class="form-control" />
+                <ValidationMessage For="() => Aluno.Telefone" class="text-danger" />
+                <br />
+            </div>
+            <button type="submit" class="btn btn-primary">Criar</button>
+        </EditForm>
+    </div>
+</div>
+
+<div>
+    <a href="/alunos">Voltar</a>
+</div>
+
+@code {
+
+    [SupplyParameterFromForm]
+    public Aluno Aluno { get; set; } = new();
+
+    public async Task AddAluno()
+    {
+        DB.Alunos.Add(Aluno);
+        await DB.SaveChangesAsync();
+        NavigationManager.NavigateTo("/alunos");
+    }
+}
